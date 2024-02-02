@@ -17,7 +17,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.5.7.RELEASE</version>
+		<version>2.7.2</version>
 		<relativePath/>
 	</parent>
 
@@ -25,9 +25,34 @@
 	<modules>
 		<module>mm-web</module>
 		<module>mm-service</module>
-		<module>mm-repo</module>
 		<module>mm-entity</module>
 	</modules>
+
+	<properties>
+		<java.version>1.8</java.version>
+		<maven.compiler.source>8</maven.compiler.source>
+		<maven.compiler.target>8</maven.compiler.target>
+		<spring-boot.version>2.7.2</spring-boot.version>
+		<mysql-connector.version>8.0.30</mysql-connector.version>
+		<druid-spring-boot.version>1.2.11</druid-spring-boot.version>
+		<mybatis-plus-spring-boot.version>3.5.2</mybatis-plus-spring-boot.version>
+		<redisson-spring-boot.version>3.17.7</redisson-spring-boot.version>
+		<knife4j-spring-boot.version>3.0.3</knife4j-spring-boot.version>
+		<tlog-web-spring-boot.version>1.4.3</tlog-web-spring-boot.version>
+		<mica.version>2.7.3</mica.version>
+		<lombok.version>1.18.24</lombok.version>
+		<easyexcel.version>3.1.4</easyexcel.version>
+		<fastjson.version>1.2.83</fastjson.version>
+		<hutool.version>5.8.5</hutool.version>
+		<slf4j-api.version>1.7.36</slf4j-api.version>
+		<servlet-api.version>2.5</servlet-api.version>
+		<okhttp.version>4.9.3</okhttp.version>
+		<tencentcloud-sdk.version>3.1.322</tencentcloud-sdk.version>
+		<swagger-annotations.version>1.5.22</swagger-annotations.version>
+		<jakarta.validation-api.version>2.0.2</jakarta.validation-api.version>
+		<cos.version>5.6.89</cos.version>
+		<junit.version>4.13.2</junit.version>
+	</properties>
 
 	<!-- 版本说明：这里统一管理依赖的版本号 -->
 	<dependencyManagement>
@@ -44,13 +69,154 @@
 			</dependency>
 			<dependency>
 				<groupId>com.hehe</groupId>
-				<artifactId>mm-repo</artifactId>
+				<artifactId>mm-entity</artifactId>
 				<version>0.0.1-SNAPSHOT</version>
 			</dependency>
 			<dependency>
-				<groupId>com.hehe</groupId>
-				<artifactId>mm-entity</artifactId>
-				<version>0.0.1-SNAPSHOT</version>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-dependencies</artifactId>
+				<version>${spring-boot.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>mysql</groupId>
+				<artifactId>mysql-connector-java</artifactId>
+				<version>${mysql-connector.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.alibaba</groupId>
+				<artifactId>druid-spring-boot-starter</artifactId>
+				<version>${druid-spring-boot.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.baomidou</groupId>
+				<artifactId>mybatis-plus-boot-starter</artifactId>
+				<version>${mybatis-plus-spring-boot.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.baomidou</groupId>
+				<artifactId>mybatis-plus-core</artifactId>
+				<version>${mybatis-plus-spring-boot.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.redisson</groupId>
+				<artifactId>redisson-spring-boot-starter</artifactId>
+				<version>${redisson-spring-boot.version}</version>
+				<exclusions>
+					<exclusion>
+						<groupId>org.springframework.boot</groupId>
+						<artifactId>spring-boot-starter-actuator</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+
+			<dependency>
+				<groupId>com.github.xiaoymin</groupId>
+				<artifactId>knife4j-spring-boot-starter</artifactId>
+				<version>${knife4j-spring-boot.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.yomahub</groupId>
+				<artifactId>tlog-web-spring-boot-starter</artifactId>
+				<version>${tlog-web-spring-boot.version}</version>
+				<exclusions>
+					<exclusion>
+						<groupId>cn.hutool</groupId>
+						<artifactId>hutool-core</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+
+			<dependency>
+				<groupId>com.yomahub</groupId>
+				<artifactId>tlog-webroot</artifactId>
+				<version>${tlog-web-spring-boot.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>net.dreamlu</groupId>
+				<artifactId>mica-xss</artifactId>
+				<version>${mica.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.projectlombok</groupId>
+				<artifactId>lombok</artifactId>
+				<version>${lombok.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.alibaba</groupId>
+				<artifactId>easyexcel</artifactId>
+				<version>${easyexcel.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.alibaba</groupId>
+				<artifactId>fastjson</artifactId>
+				<version>${fastjson.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>cn.hutool</groupId>
+				<artifactId>hutool-all</artifactId>
+				<version>${hutool.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-api</artifactId>
+				<version>${slf4j-api.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>javax.servlet</groupId>
+				<artifactId>servlet-api</artifactId>
+				<version>${servlet-api.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.squareup.okhttp3</groupId>
+				<artifactId>okhttp</artifactId>
+				<version>${okhttp.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.tencentcloudapi</groupId>
+				<artifactId>tencentcloud-sdk-java</artifactId>
+				<version>${tencentcloud-sdk.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>io.swagger</groupId>
+				<artifactId>swagger-annotations</artifactId>
+				<version>${swagger-annotations.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>jakarta.validation</groupId>
+				<artifactId>jakarta.validation-api</artifactId>
+				<version>${jakarta.validation-api.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.qcloud</groupId>
+				<artifactId>cos_api</artifactId>
+				<version>${cos.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>${junit.version}</version>
+				<scope>test</scope>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
