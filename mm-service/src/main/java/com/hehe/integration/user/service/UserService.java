@@ -1,4 +1,4 @@
-package com.hehe.integration.user;
+package com.hehe.integration.user.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.hehe.integration.entity.User;
