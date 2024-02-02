@@ -19,10 +19,6 @@
 
 	<!-- Web模块相关依赖 -->
 	<dependencies>
-<!--		<dependency>-->
-<!--			<groupId>com.hehe</groupId>-->
-<!--			<artifactId>mm-entity</artifactId>-->
-<!--		</dependency>-->
 		<dependency>
 			<groupId>com.baomidou</groupId>
 			<artifactId>mybatis-plus-boot-starter</artifactId>

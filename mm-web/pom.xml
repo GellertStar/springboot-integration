@@ -26,7 +26,7 @@
 
 		<dependency>
 			<groupId>com.hehe</groupId>
-			<artifactId>mm-entity</artifactId>
+			<artifactId>mm-common</artifactId>
 		</dependency>
 
 		<dependency>
