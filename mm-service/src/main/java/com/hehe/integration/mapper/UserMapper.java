@@ -1,18 +1,18 @@
 package com.hehe.integration.mapper;
 
-import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.hehe.integration.entity.User;
-import org.apache.ibatis.annotations.Mapper;
-
-import java.util.List;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
- * @Description: 用户mapper
- * @Author genglei
- * @CreateTime 2024-02-02
- * @Version 1.0
- */
-@Mapper
-public interface UserMapper extends BaseMapper<User>{
-    List<User> getUsers();
+* @author Administrator
+* @description 针对表【user(用户表)】的数据库操作Mapper
+* @createDate 2024-02-04 16:05:45
+* @Entity com.hehe.integration.entity.User
+*/
+public interface UserMapper extends BaseMapper<User> {
+
 }
+
+
+
+

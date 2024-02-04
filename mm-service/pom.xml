@@ -31,6 +31,10 @@
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 		</dependency>
-	</dependencies>
+        <dependency>
+            <groupId>com.hehe</groupId>
+            <artifactId>mm-common</artifactId>
+        </dependency>
+    </dependencies>
 
 </project>

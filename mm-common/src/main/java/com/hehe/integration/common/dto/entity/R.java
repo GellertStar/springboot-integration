@@ -1,4 +1,4 @@
-package com.hehe.integration.common;
+package com.hehe.integration.common.dto.entity;
 
 import java.io.Serializable;
 
