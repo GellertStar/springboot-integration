@@ -8,6 +8,6 @@ public class HelloController {
 
     @GetMapping("/")
     public String index(){
-        return "redirect:/t-user/list";
+        return "redirect:/user/list";
     }
 }
